@@ -1,0 +1,559 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+:root {
+    --clr-light: #fdfdfd;
+    --clr-dark: #000000FF;
+    --clr-blue: #515cda;
+    --clr-gray: #1f2325;
+
+    --brand: #5865f2;
+    --main: #1a2081;
+    --main-rgb: 26, 32, 129; /* Add this line */
+}
+
+
+
+@font-face {
+    font-family: 'gg sans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36db4c75529857767_ggsans-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652736292cbf8363b43d077a_ggsans-Normal.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652736292cbf8363b43d077a_ggsans-Normal.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652736292cbf8363b43d077a_ggsans-Normal.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c35ca90c6ad859f588_ggsans-Normal.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36db4c75529857759_ggsans-Normal.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c31643fb931ea525ec_ggsans-Normal.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c31643fb931ea525ec_ggsans-Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c30510e4ad4333a424_ggsans-Bold.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c37e8a69256e2797b9_ggsans-ExtraBold.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c39794d5ec26842c01_ggsans-Bold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36db4c75529857736_ggsans-ExtraBold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36db4c75529857736_ggsans-ExtraBold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36db4c75529857736_ggsans-ExtraBold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36db4c75529857736_ggsans-ExtraBold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36c440af015499282_ggsans-Bold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36c440af015499282_ggsans-Bold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343ef_ggsans-ExtraBold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343ef_ggsans-ExtraBold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343ef_ggsans-ExtraBold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343ef_ggsans-ExtraBold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77a3_ggsans-Bold.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77a3_ggsans-Bold.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77a3_ggsans-Bold.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c35ca90c6ad859f564_ggsans-ExtraBold.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c35ca90c6ad859f564_ggsans-ExtraBold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c341a1afd425063916_ggsans-ExtraBoldItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c31428bfb1c99aecbb_ggsans-BoldItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c319ba7da75394c4b9_ggsans-BoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c319ba7da75394c4b9_ggsans-BoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c319ba7da75394c4b9_ggsans-BoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b578e_ggsans-ExtraBoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b578e_ggsans-ExtraBoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b578e_ggsans-ExtraBoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b578e_ggsans-ExtraBoldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c35ca90c6ad859f555_ggsans-BoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c35ca90c6ad859f555_ggsans-BoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343f3_ggsans-ExtraBoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343f3_ggsans-ExtraBoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343f3_ggsans-ExtraBoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343f3_ggsans-ExtraBoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c322c77e92a43343f3_ggsans-ExtraBoldItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c30510e4ad4333a421_ggsans-BoldItalic.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c34f8aed6dc77e4877_ggsans-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3ca731b7fff229a99_ggsans-SemiboldItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3ca731b7fff229a99_ggsans-SemiboldItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b579e_ggsans-SemiboldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b579e_ggsans-SemiboldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b579e_ggsans-SemiboldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b579e_ggsans-SemiboldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3cf7d717a309b579e_ggsans-SemiboldItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c341a1afd42506392f_ggsans-SemiboldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77dd_ggsans-MediumItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c32f7c60601a65e6cc_ggsans-MediumItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77d4_ggsans-MediumItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36b454129b33d2564_ggsans-MediumItalic.ttf') format('truetype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c36b454129b33d2564_ggsans-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77e1_ggsans-NormalItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c387dadfeed3df77e1_ggsans-NormalItalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3494978451827c5bc_ggsans-NormalItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3494978451827c5bc_ggsans-NormalItalic.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3ad2d5a4b94b1345f_ggsans-NormalItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3ad2d5a4b94b1345f_ggsans-NormalItalic.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3494978451827c58c_ggsans-NormalItalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c319ba7da75394c4cb_ggsans-Medium.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c319ba7da75394c4cb_ggsans-Medium.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3950eb10349a53936_ggsans-Medium.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3494978451827c572_ggsans-Medium.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3494978451827c572_ggsans-Medium.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3494978451827c572_ggsans-Medium.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c32cbf8363b43e6604_ggsans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsans';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c319ba7da75394c4dc_ggsans-Semibold.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c35928b933259f0f31_ggsans-Semibold.eot') format('embedded-opentype'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c381a76d398864458d_ggsans-Semibold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c381a76d398864458d_ggsans-Semibold.woff') format('woff'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/652737c3fd070a45d90e0f94_ggsans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abcgintonord 800';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65273da649497845182f7341_abcgintonord-800-extrabolditalic.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65273da6fd070a45d9154a27_abcgintonord-800-extrabolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abcgintonord 800';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65273da62cbf8363b445b021_abcgintonord-800-extrabold.woff2') format('woff2'), url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65273da61428bfb1c9a2b291_abcgintonord-800-extrabold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abcgintodiscord';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67110a451d677abf8340c6da_ABCGintoDiscord-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abcgintodiscordnord';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67110b10efb84547ce5e8ef7_ABCGintoDiscordNord-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Abcgintodiscord';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/67110a452ee74d65f90c1dc0_ABCGintoDiscord-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABCGintoNormal-Bold';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65274471f1a58fe9565b9ca9_60ae8e384c11e54fd6986f3b_ABCGintoNormal-Bold.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'ABC Ginto Normal';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65e5baf6b5e4414d366b9dd7_ABCGintoNormalVariable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsansmono';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65e807de140a10ba516f4805_ggsansmono-Normal.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ggsansmono';
+    src: url('https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/65e807de693dc15751ec6ede_ggsansmono-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body {
+    display: block;
+
+    font-family: 'Abcgintodiscord', sans-serif;
+    background-color: var(--main );
+    background-repeat: no-repeat;
+    line-height: 1.6em;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.btn {
+    font-size: 1rem;
+    font-family: 'Abcgintodiscord', sans-serif;
+
+    border: none;
+    border-radius: 15px;
+}
+
+.btn-1 {
+    font-size: 1.3rem;
+    font-family: 'Abcgintodiscord', sans-serif;
+    text-align: center;
+
+    border: none;
+    border-radius: 15px;
+
+    padding: 1em;
+}
+
+.container {
+    display: block;
+
+    margin: 2rem;
+}
+/* End of Base styles */
+
+/* Heading */
+
+.header-container {
+    display: block;
+
+    /* Keep your positioning and dimensions */
+    position: absolute; /* Or 'fixed' if you want it to stay when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* --- Background Magic --- */
+    /* Layer 1: Gradient Overlay (Top Layer) */
+    /* Fades from transparent at the top/middle to the body background color at the bottom */
+    background-image:
+            linear-gradient(
+                    to bottom,
+                    rgba(var(--main-rgb), 0) 60%, /* Fully transparent for the top 60% */
+                    rgba(var(--main-rgb), 0) 85%,/* Start fading to the main color */
+                    var(--main) 100% /* Fully opaque main color at the very bottom */
+            ),
+                /* Layer 2: Your Original Image (Bottom Layer) */
+            url("../res/image/png/673df7fbe95a8e90a7571751_D-bg.png");
+
+    /* --- Control EACH background layer --- */
+    /* Corresponds to the layers in background-image */
+    background-position:
+            0% 0%,             /* Position for the gradient (top-left) */
+            50% 0%;           /* Position for your image (center-top) */
+    background-repeat:
+    no-repeat,
+    no-repeat;       /* Your image should not repeat */
+    background-size:
+            100% 100%,       /* Gradient should cover the whole container */
+            cover;           /* Your image should cover (as before) */
+
+    /* Optional: Ensure content inside is above the background if needed */
+    z-index: -1; /* Example: Make sure header is above other potential absolute elements */
+}
+
+
+.home {
+    background-image: url("../res/image/webp/664c33e0f20d14f69f999b5b_Texture Headline.webp");
+    background-repeat: repeat;
+    background-size: 90%;
+    background-attachment: scroll;
+
+    height: 100vh;
+    max-height: 700px;
+
+    padding-bottom: 3.125rem;
+    position: relative;
+    z-index: 0;
+}
+
+.discord-btn {
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+
+    font-weight: 500;
+    padding: 0.6em 1em;
+
+
+}
+
+.discord-logo {
+    position: fixed;
+
+    top: 50px;
+    left: 40px;
+
+    width: 9.3rem;
+    height: auto;
+}
+
+.login {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+}
+
+/* NAVBAR */
+
+.nav-container {
+    margin-top: 3rem;
+}
+
+.nav-ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    color: var(--clr-light);
+
+    font-family: 'Discord-bold', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-dropdown {
+    position: relative;
+
+    top: 3px;
+    height: 1rem;
+    width: 1rem;
+    opacity: 0.6;
+}
+
+/* Main Content */
+
+.main-content {
+    position: absolute;
+    top: 220px;
+    left: 160px;
+
+    z-index: 1;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    align-items: baseline;
+
+    color: var(--clr-light);
+
+    text-align: left;
+    height: auto;
+
+}
+
+.heading {
+    font-family: Abcgintodiscordnord, sans-serif;
+
+    font-size: 3.6rem;
+    font-weight: 900;
+    max-width: 12ch;
+    line-height: 3.3rem;
+}
+
+.subtitle {
+    font-family: Abcgintodiscord, sans-serif;
+    font-size: 1.3rem;
+    line-height: 1em;
+    max-width: 39ch;
+}
+
+#main-picture {
+    position: relative;
+    bottom: 360px;
+    left: 450px;
+
+    width: 830px;
+    height: auto;
+}
+
+#Clyde {
+    position: absolute;
+    bottom: 376px;
+    right: 223px;
+
+    width: 60px;
+
+
+    animation: float 5s ease-in-out infinite;
+    -webkit-animation: float 5s ease-in-out infinite;
+    -moz-animation: float 5s ease-in-out infinite;
+
+    /* Optional: Define the origin if needed, center is default */
+    transform-origin: center center;
+}
+
+@-moz-keyframes float {
+    0% {
+        transform: translateY(0px) ;
+    }
+
+    50% {
+        transform: translateY(-20px) ;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes float {
+    0% {
+        transform: translateY(0px) ;
+    }
+
+    50% {
+        transform: translateY(-20px) ;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) ;
+    }
+
+    50% {
+    transform: translateY(-20px) ;
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+#Clyde-shadow {
+    position: absolute;
+    bottom: 370px;
+    right: 223px;
+
+    width: 70px;
+}
+
+#Wumpus-stand {
+    position: absolute;
+    top: 318px;
+    right: -105px;
+
+    max-width: 170px;
+}
+
+#Wumpus-leaf {
+    position: absolute;
+    top: 285px;
+    right: -105px;
+    max-width: 168px;
+
+    /* Keep the animation property as is */
+    -webkit-animation: spin 3s ease-in-out infinite;
+    -moz-animation: spin 3s ease-in-out infinite;
+    animation: spin 3s ease-in-out infinite;
+
+    /* Optional: Define the origin if needed, center is default */
+     transform-origin: center center;
+}
+
+/* --- Updated Keyframes --- */
+
+@-moz-keyframes spin {
+    0% { -moz-transform: rotate(0deg); } /* Start at 0 */
+    50% { -moz-transform: rotate(10deg); } /* Peak at 50% */
+    100% { -moz-transform: rotate(0deg); } /* Return to 0 */
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); } /* Start at 0 */
+    50% { -webkit-transform: rotate(10deg); } /* Peak at 50% */
+    100% { -webkit-transform: rotate(0deg); } /* Return to 0 */
+}
+
+@keyframes spin {
+    0% {
+        /* Include prefixes here too for safety, though less critical */
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg); /* Start at 0 */
+    }
+    50% {
+        -webkit-transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+        transform: rotate(30deg); /* Peak at 50% */
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        transform: rotate(0deg); /* Return to 0 */
+    }
+}
+
+.download {
+    position: absolute;
+    top: 510px;
+    right: -87px;
+
+    display: flex;
+    align-items: center;
+    gap: 3em;
+}
+
+.download-btn {
+    background-color: var(--clr-light);
+    color: var(--clr-gray);
+}
+
+.download-btn:hover {
+    cursor: pointer;
+    background-color: #bdbdbd;
+    transition: 0.5s;
+}
+
+.open-discord {
+    color: var(--clr-light);
+    background-color: var(--brand);
+
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    transition: color 0.4s ease;
+    cursor: pointer;
+
+}
+
+.open-discord::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: linear-gradient(180deg, transparent 0, #1f1d5d 130%);
+
+    /* Initially hidden */
+    opacity: 0;
+
+    /* Place behind the button's text content */
+    z-index: -1;
+
+    /* Transition the opacity */
+    transition: opacity .3s ease;
+}
+
+.open-discord:hover::before{
+    cursor: pointer;
+    opacity: 1;
+}
+
+
+#download-icon {
+    position: relative;
+
+    top: 6px;
+}
+
