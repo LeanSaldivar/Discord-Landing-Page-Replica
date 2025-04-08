@@ -166,8 +166,6 @@
 
 
 body {
-    display: block;
-
     font-family: 'Abcgintodiscord', sans-serif;
     background-color: var(--main );
     background-repeat: no-repeat;
@@ -181,6 +179,10 @@ body {
 
 a {
     text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }
 
 
@@ -204,53 +206,45 @@ a {
 }
 
 .container {
-    display: block;
-
-    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    margin: 3rem 10rem;
 }
-/* End of Base styles */
 
 /* Heading */
-
-.header-container {
-    display: block;
-
-    /* Keep your positioning and dimensions */
-    position: absolute; /* Or 'fixed' if you want it to stay when scrolling */
+#header-container {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    /* --- Background Magic --- */
-    /* Layer 1: Gradient Overlay (Top Layer) */
-    /* Fades from transparent at the top/middle to the body background color at the bottom */
+
     background-image:
             linear-gradient(
                     to bottom,
-                    rgba(var(--main-rgb), 0) 60%, /* Fully transparent for the top 60% */
-                    rgba(var(--main-rgb), 0) 85%,/* Start fading to the main color */
-                    var(--main) 100% /* Fully opaque main color at the very bottom */
+                    rgba(var(--main-rgb), 0) 60%,
+                    rgba(var(--main-rgb), 0) 85%,
+                    var(--main) 100%
             ),
-                /* Layer 2: Your Original Image (Bottom Layer) */
             url("../res/image/png/673df7fbe95a8e90a7571751_D-bg.png");
 
-    /* --- Control EACH background layer --- */
-    /* Corresponds to the layers in background-image */
     background-position:
-            0% 0%,             /* Position for the gradient (top-left) */
-            50% 0%;           /* Position for your image (center-top) */
+            0% 0%,
+            50% 0%;
     background-repeat:
     no-repeat,
-    no-repeat;       /* Your image should not repeat */
+    no-repeat;
     background-size:
-            100% 100%,       /* Gradient should cover the whole container */
-            cover;           /* Your image should cover (as before) */
+            100% 100%,
+            cover;
 
-    /* Optional: Ensure content inside is above the background if needed */
-    z-index: -1; /* Example: Make sure header is above other potential absolute elements */
+    z-index: -1;
+
+    height: auto;
 }
 
 
-.home {
+.stars {
     background-image: url("../res/image/webp/664c33e0f20d14f69f999b5b_Texture Headline.webp");
     background-repeat: repeat;
     background-size: 90%;
@@ -271,6 +265,7 @@ a {
     font-weight: 500;
     padding: 0.6em 1em;
 
+    z-index: 99;
 
 }
 
@@ -282,6 +277,9 @@ a {
 
     width: 9.3rem;
     height: auto;
+
+    z-index: 99;
+
 }
 
 .login {
@@ -320,32 +318,34 @@ a {
     opacity: 0.6;
 }
 
-/* Main Content */
+/* Hero */
 
-.main-content {
-    position: absolute;
-    top: 220px;
-    left: 160px;
+.hero, .hero-container {
+    display: flex;
 
-    z-index: 1;
+    flex: 1;
+
+    height: 100%;
+    max-height: 615px;
+
+    z-index: -1;
+
 }
 
-.content {
+.hero-text {
     display: flex;
     flex-direction: column;
     gap: 1em;
 
-    align-items: baseline;
+    margin-top: 5rem;
 
-    color: var(--clr-light);
-
-    text-align: left;
-    height: auto;
-
+    width: 100%;
+    max-width: 485px;
 }
 
 .heading {
     font-family: Abcgintodiscordnord, sans-serif;
+    color: var(--clr-light);
 
     font-size: 3.6rem;
     font-weight: 900;
@@ -355,24 +355,33 @@ a {
 
 .subtitle {
     font-family: Abcgintodiscord, sans-serif;
+    color: var(--clr-light);
+
     font-size: 1.3rem;
     line-height: 1em;
     max-width: 39ch;
 }
 
-#main-picture {
-    position: relative;
-    bottom: 360px;
-    left: 450px;
+.hero-img {
+    width: 100%;
+    max-width: 700px;
 
+    z-index: 1;
+}
+
+
+#main-picture {
     width: 830px;
     height: auto;
+
+    z-index: -1;
+
 }
 
 #Clyde {
-    position: absolute;
-    bottom: 376px;
-    right: 223px;
+    position: relative;
+    bottom: 141px;
+    right: 248px;
 
     width: 60px;
 
@@ -381,7 +390,6 @@ a {
     -webkit-animation: float 5s ease-in-out infinite;
     -moz-animation: float 5s ease-in-out infinite;
 
-    /* Optional: Define the origin if needed, center is default */
     transform-origin: center center;
 }
 
@@ -419,7 +427,7 @@ a {
     }
 
     50% {
-    transform: translateY(-20px) ;
+        transform: translateY(-20px) ;
     }
 
     100% {
@@ -428,7 +436,7 @@ a {
 }
 
 #Clyde-shadow {
-    position: absolute;
+    position: relative;
     bottom: 370px;
     right: 223px;
 
@@ -436,67 +444,60 @@ a {
 }
 
 #Wumpus-stand {
-    position: absolute;
-    top: 318px;
-    right: -105px;
+    position: relative;
+    bottom: 141px;
+    right: -299px;
 
     max-width: 170px;
 }
 
 #Wumpus-leaf {
-    position: absolute;
-    top: 285px;
-    right: -105px;
+    position: relative;
+    bottom: 280px;
+    right: -133px;
     max-width: 168px;
 
-    /* Keep the animation property as is */
     -webkit-animation: spin 3s ease-in-out infinite;
     -moz-animation: spin 3s ease-in-out infinite;
     animation: spin 3s ease-in-out infinite;
 
-    /* Optional: Define the origin if needed, center is default */
-     transform-origin: center center;
+    transform-origin: center center;
 }
 
-/* --- Updated Keyframes --- */
 
 @-moz-keyframes spin {
-    0% { -moz-transform: rotate(0deg); } /* Start at 0 */
-    50% { -moz-transform: rotate(10deg); } /* Peak at 50% */
-    100% { -moz-transform: rotate(0deg); } /* Return to 0 */
+    0% { -moz-transform: rotate(0deg); }
+    50% { -moz-transform: rotate(10deg); }
+    100% { -moz-transform: rotate(0deg); }
 }
 
 @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); } /* Start at 0 */
-    50% { -webkit-transform: rotate(10deg); } /* Peak at 50% */
-    100% { -webkit-transform: rotate(0deg); } /* Return to 0 */
+    0% { -webkit-transform: rotate(0deg); }
+    50% { -webkit-transform: rotate(10deg); }
+    100% { -webkit-transform: rotate(0deg); }
 }
 
 @keyframes spin {
     0% {
-        /* Include prefixes here too for safety, though less critical */
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
-        transform: rotate(0deg); /* Start at 0 */
+        transform: rotate(0deg);
     }
     50% {
         -webkit-transform: rotate(30deg);
         -moz-transform: rotate(30deg);
-        transform: rotate(30deg); /* Peak at 50% */
+        transform: rotate(30deg);
     }
     100% {
         -webkit-transform: rotate(0deg);
         -moz-transform: rotate(0deg);
-        transform: rotate(0deg); /* Return to 0 */
+        transform: rotate(0deg);
     }
 }
 
 .download {
-    position: absolute;
-    top: 510px;
-    right: -87px;
-
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 3em;
 }
@@ -535,13 +536,10 @@ a {
 
     background: linear-gradient(180deg, transparent 0, #1f1d5d 130%);
 
-    /* Initially hidden */
     opacity: 0;
 
-    /* Place behind the button's text content */
     z-index: -1;
 
-    /* Transition the opacity */
     transition: opacity .3s ease;
 }
 
@@ -549,7 +547,6 @@ a {
     cursor: pointer;
     opacity: 1;
 }
-
 
 #download-icon {
     position: relative;
