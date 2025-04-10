@@ -197,6 +197,8 @@ p {
     font-size: 1.3rem;
 }
 
+
+
 .btn {
     font-size: 1rem;
     font-family: 'Abcgintodiscord', sans-serif;
@@ -237,7 +239,7 @@ p {
                     rgba(var(--main-rgb), 0) 85%,
                     var(--main) 100%
             ),
-            url("../res/image/png/673df7fbe95a8e90a7571751_D-bg.png");
+            url("../res/assets/png/673df7fbe95a8e90a7571751_D-bg.png");
 
     background-position:
             0% 0%,
@@ -256,7 +258,7 @@ p {
 
 
 .stars {
-    background-image: url("../res/image/webp/664c33e0f20d14f69f999b5b_Texture Headline.webp");
+    background-image: url("../res/assets/webp/664c33e0f20d14f69f999b5b_Texture Headline.webp");
     background-repeat: repeat;
     background-size: 90%;
     background-attachment: scroll;
@@ -275,9 +277,6 @@ p {
 
     font-weight: 500;
     padding: 0.6em 1em;
-
-    z-index: 99;
-
 }
 
 .discord-logo {
@@ -297,6 +296,8 @@ p {
     position: fixed;
     top: 40px;
     right: 40px;
+
+    z-index: 99;
 }
 
 /* NAVBAR */
@@ -558,7 +559,7 @@ p {
 }
 
 .star-2 {
-    background-image: url("../res/image/webp/664f212b9e15d13d199dd448_Texture 2.webp");
+    background-image: url("../res/assets/webp/664f212b9e15d13d199dd448_Texture 2.webp");
     background-repeat: repeat;
     background-size: 90%;
     background-attachment: scroll;
@@ -574,11 +575,11 @@ p {
 
 .article, .article-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 3em;
 
-    width: 100%;
+
     height: 100%;
     max-height: 615px;
 
@@ -586,13 +587,12 @@ p {
 }
 
 .article-container{
-    border-radius: 75px;
+    border-radius: 100px;
     border: none;
-    background-image: url("../res/image/png/6787ce4640564a6c2690d6de_F-bg.png");
+    background-image: url("../res/assets/png/6787ce4640564a6c2690d6de_F-bg.png");
 
-    background-position:
-            0% 0%,
-            50% 0%;
+    background-position-x: 50%;
+    background-position-y: 50%;
     background-repeat:
             no-repeat,
             no-repeat;
@@ -600,21 +600,35 @@ p {
             100% 100%,
             cover;
 
-    z-index: -1;
-
+    width: 1235px;
     height: auto;
 
     margin: 300px 0;
+
+    z-index: -1;
 }
 
-.article-img {
-    border-radius: 75px;
-
-    width: 700px;
-    height: max-content;
-
-    margin: 0.5rem;
+.video {
+    /* Optional: useful if you want to apply a radius or shadow to the wrapper */
+    border-radius: 100px;
+    overflow: hidden;
+    width: fit-content;
+    margin: 2rem;
 }
+
+.article-video {
+    border-radius: 100px;
+
+    height: 560px;
+    width: 100%;
+    max-width: 700px;
+
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    display: block;
+}
+
 
 .article-text {
     display: flex;
@@ -623,14 +637,15 @@ p {
 }
 
 .article-heading {
-    font-size: 3rem;
-    max-width: 12ch;
+    font-size: 2rem;
+    max-width: 13ch;
     line-height: 0.9em;
 }
 
 .article-subtitle {
-    font-size: 1rem;
-    max-width: 29ch;
+    font-size: 1.2rem;
+    font-family: Abcgintodiscord, sans-serif;
+    max-width: 26ch;
 }
 
 .party-wumpus {
@@ -640,3 +655,33 @@ p {
     width: 120px;
 }
 
+/* Second Article */
+
+
+.article-img-2 {
+    border-radius: 75px;
+
+    width: 700px;
+    height: auto;
+
+    margin: 0.5rem;
+}
+
+.article-text-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    margin-left: 1em;
+}
+
+.article-heading-2 {
+    font-size: 3rem;
+    max-width: 14ch;
+    line-height: 0.9em;
+}
+
+.article-subtitle-2 {
+    font-size: 1rem;
+    max-width: 29ch;
+}
