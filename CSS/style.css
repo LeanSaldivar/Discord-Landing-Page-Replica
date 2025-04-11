@@ -2,8 +2,8 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
-    outline: 0;
+
+    box-sizing: border-box;
 }
 
 :root {
@@ -171,6 +171,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 
+    width: 100%;
 }
 
 a {
@@ -183,17 +184,18 @@ ul {
 
 
 h1, p {
-    font-family: Abcgintodiscordnord, sans-serif;
     color: var(--clr-light);
 }
 
 h1 {
+    font-family: Abcgintodiscordnord, sans-serif;
     text-transform: uppercase;
     font-weight: 900;
     font-size: 3.6rem;
 }
 
 p {
+    font-family: Abcgintodiscord, sans-serif;
     font-size: 1.3rem;
 }
 
@@ -221,8 +223,8 @@ p {
 .container {
     display: flex;
     flex-direction: column;
-    gap: 5em;
-    margin: 3rem 10rem;
+
+    margin: 6rem 10rem;
 }
 
 /* Heading */
@@ -558,10 +560,12 @@ p {
     top: 6px;
 }
 
-.star-2 {
-    background-image: url("../res/assets/webp/664f212b9e15d13d199dd448_Texture 2.webp");
+
+/*Stars*/
+
+.main-star {
     background-repeat: repeat;
-    background-size: 90%;
+    background-size: 100%;
     background-attachment: scroll;
 
     height: 100vh;
@@ -573,14 +577,32 @@ p {
     z-index: 2;
 }
 
+.star-2 {
+    background-image: url("../res/assets/webp/664f212b9e15d13d199dd448_Texture 2.webp");
+}
+
+.star-3 {
+    background-image: url("../res/assets/webp/664f212db01d13abd533fda6_Texture 3.webp");
+}
+
+.star-4 {
+    background-image: url("../res/assets/webp/664f212b3ca3cdd172c0e940_Texture 4.webp");
+}
+
+/*Articles*/
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    padding: 0 10rem;
+}
+
 .article, .article-container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 3em;
 
-
-    height: 100%;
     max-height: 615px;
 
     z-index: 1;
@@ -603,7 +625,6 @@ p {
     width: 1235px;
     height: auto;
 
-    margin: 300px 0;
 
     z-index: -1;
 }
@@ -621,7 +642,7 @@ p {
 
     height: 560px;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
 
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -650,38 +671,140 @@ p {
 
 .party-wumpus {
     position: relative;
-    top: 250px;
-    left: 935px;
+    top: 169px;
+    left: 1005px;
     width: 120px;
+    z-index: 3;
 }
 
 /* Second Article */
 
+.container-2 {
+    justify-content: flex-end;
+    align-items: center;
 
-.article-img-2 {
-    border-radius: 75px;
+    background-image: url("../res/assets/png/678e5155e052593581824839_Featur-card.png");
 
-    width: 700px;
-    height: auto;
-
-    margin: 0.5rem;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    background-repeat:
+            no-repeat,
+            no-repeat;
+    background-size:
+            100% 100%,
+            cover;
 }
+
+.video-2 {
+    border-radius: 100px;
+    overflow: hidden;
+    width: fit-content;
+    margin: 2rem;
+}
+
+.article-video-2 {
+    border-radius: 100px;
+
+    height: 560px;
+    width: 100%;
+    max-width: 800px;
+
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+
+    display: block;
+}
+
 
 .article-text-2 {
     display: flex;
     flex-direction: column;
     gap: 1em;
-
-    margin-left: 1em;
 }
 
 .article-heading-2 {
-    font-size: 3rem;
-    max-width: 14ch;
+    font-size: 2rem;
+    max-width: 13ch;
     line-height: 0.9em;
 }
 
 .article-subtitle-2 {
-    font-size: 1rem;
-    max-width: 29ch;
+    font-size: 1.2rem;
+    font-family: Abcgintodiscord, sans-serif;
+    max-width: 26ch;
+}
+
+/* Third Article */
+
+/*.box {*/
+/*    position: absolute;*/
+/*    top: 253px;*/
+/*    left: 1005px;*/
+/*    width: 120px;*/
+
+/*    z-index: 3;*/
+/*}*/
+
+/*Line*/
+
+.line-section {
+    margin: 100px 0 200px 0;
+}
+
+.line-container{
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.line{
+    background-image: url(https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/6729ca637f6587d3dc83f73e_line%20\(1\).png);
+
+    background-position-x: 100%;
+    background-repeat:
+            no-repeat,
+            no-repeat;
+    background-size:
+            100% 100%,
+            cover;
+
+    width: fit-content;
+    height: auto;
+    padding: 1rem 0;
+
+    display: flex;
+    align-items: center;
+    gap: 3em;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    /* Animation */
+    animation: treadmill 25s linear infinite;
+}
+.line-text {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+
+.discord-mark {
+    max-width: 36px;
+    vertical-align: middle; /* Helps alignment within inline-flex */
+}
+
+/* Keyframes Definition */
+@keyframes treadmill {
+    0% {
+        transform: translateX(0%); /* Start position */
+    }
+    50% {
+        transform: translateX(-40%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
 }
