@@ -12,10 +12,11 @@
     --clr-blue: #515cda;
     --clr-gray: #1f2325;
     --clr-span: #ffffff80;
+    --clr-light-blue: #545fe7;
 
     --brand: #5865f2;
     --main: #1a2081;
-    --main-rgb: 26, 32, 129; /* Add this line */
+    --main-rgb: 26, 32, 129;
 }
 
 @font-face {
@@ -56,6 +57,7 @@ span {
 }
 
 a {
+    color: var(--clr-light);
     text-decoration: none;
 }
 
@@ -173,7 +175,7 @@ p {
     width: 9.3rem;
     height: auto;
 
-    z-index: 99;
+    z-index: 98;
 
 }
 
@@ -182,7 +184,7 @@ p {
     top: 40px;
     right: 40px;
 
-    z-index: 99;
+    z-index: 98;
 }
 
 /* NAVBAR */
@@ -924,6 +926,8 @@ p {
     top: 7174px;
     left: 570px;
     width: 400px;
+
+    z-index: 100;
 }
 
 .wumpus-leaf-2 {
@@ -937,16 +941,79 @@ p {
     animation: spin 5s ease-in-out infinite;
 }
 
-.footer, .footer-container {
+.footer {
+position: relative;
+    z-index: 99;
+
+}
+
+.footer, .footer-flex-container {
     display: flex;
     flex-direction: column;
     gap: 1em;
+
+    flex-shrink: 1;
+
+}
+
+.footer-flex-container {
+    grid-area: 1 / span 2 ;
+}
+
+.footer-grid-container {
+    display: grid;
+
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Keeps it responsive */
+    grid-template-rows: repeat(auto-fit, minmax(30px, 1fr)); /* Repeats row 6 times with 100 px size */
+
+    grid-template-areas:
+    ". . . Product . Company . Resource . Policies . .";
+
+    margin-top: 4rem;
+    margin-bottom: 5rem;
+
+    padding: 0 4rem;
+}
+
+.column-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    font-size: 1rem;
+}
+
+.column-items a:hover {
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+.column-1 {
+    grid-area: Product;
+}
+
+.column-2 {
+    grid-area: Company;
+
+}
+
+.column-3 {
+    grid-area: Resource;
+
+}
+
+.column-4 {
+    grid-area: Policies;
 }
 
 .footer {
     background-image: url(https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66ed4cf5fef3aff44b9269d0_Background%20\(1\).png);
+
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:
+            100% 100%,
+            cover;
+
 
     padding-top: 2rem;
     padding-bottom: 0;
@@ -965,5 +1032,13 @@ p {
     margin: 4.8rem 2rem;
 }
 
-.footer-grid {
+
+.discord {
+    background-color: var(--clr-light-blue);
+    padding: 0 2rem 1rem;
+}
+
+.discord-wordmark {
+    width: 100%;
+    overflow: hidden;
 }
