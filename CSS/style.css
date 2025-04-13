@@ -11,6 +11,7 @@
     --clr-dark: #000000FF;
     --clr-blue: #515cda;
     --clr-gray: #1f2325;
+    --clr-span: #ffffff80;
 
     --brand: #5865f2;
     --main: #1a2081;
@@ -45,6 +46,13 @@ body {
     text-rendering: optimizeLegibility;
 
     width: 100%;
+}
+
+span {
+    font-family: 'Abcgintodiscord', sans-serif;
+    color: var(--clr-span);
+    font-weight: 400;
+    line-height: 20px;
 }
 
 a {
@@ -99,6 +107,8 @@ p {
 
     margin: 6rem 10rem;
 }
+
+/* End of Base Styles */
 
 /* Heading */
 #header-container {
@@ -938,10 +948,17 @@ p {
     background-repeat: no-repeat;
     background-size: cover;
 
-
-
     padding-top: 2rem;
     padding-bottom: 0;
+}
+
+.footer-logo {
+    margin-bottom: 1rem;
+}
+
+.social {
+    display: flex;
+    gap: 1em;
 }
 
 .footer-container {
